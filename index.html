@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GOMA SKIN – Rituels de soin coréens & japonais</title>
+  <meta name="description" content="GOMA SKIN, la marque française inspirée des rituels de skincare coréens et japonais. Box de soins, routines minimalistes et sélection clean.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6ede7;
+      --bg-alt: #fdf8f4;
+      --accent: #b88a63;
+      --accent-dark: #8b6545;
+      --text: #2a221c;
+      --muted: #7d6e62;
+      --white: #ffffff;
+      --radius-lg: 20px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(246,237,231,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.16em;
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 22px 45px rgba(0,0,0,0.08);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(0,0,0,0.08);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+    }
+
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 1.4rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        padding: 1rem 1.5rem 1.2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+      }
+      .nav-menu.open {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    main {
+      padding-bottom: 4rem;
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 480px;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding-top: 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+      font-size: 0.98rem;
+      max-width: 520px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: var(--bg-alt);
+      padding: 1.6rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      background: rgba(255,255,255,0.7);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-dark);
+    }
+
+    .hero-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .hero-list li::before {
+      content: "•";
+      margin-right: 0.4rem;
+      color: var(--accent);
+    }
+
+    @media (max-width: 840px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 2.2rem;
+      }
+    }
+
+    /* Boxes / produits */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.4rem;
+    }
+
+    .card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-dark);
+      margin-bottom: 0.15rem;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .card-price {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .card-price span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .card-footer {
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 960px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Steps */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .step {
+      padding: 1.3rem 1.2rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0,0,0,0.05);
+      background: rgba(255,255,255,0.4);
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-text {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 840px) {
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Testimonials */
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin-top: 2.2rem;
+    }
+
+    .testimonial {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .testimonial-name {
+      margin-top: 0.7rem;
+      font-weight: 500;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .testimonial-tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 960px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FAQ & contact */
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      margin-top: 2.2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .contact-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .input-group input {
+      flex: 1;
+      padding: 0.7rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.08);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border-color: var(--accent);
+    }
+
+    .help-text {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 840px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    footer {
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding: 1.8rem 0 2.4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-dark);
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-mark">G</div>
+        <div class="brand-name">GOMA SKIN</div>
+      </div>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" id="navToggle">☰</button>
+      <nav class="nav-menu" id="navMenu">
+        <div class="nav-links">
+          <a href="#concept">Concept</a>
+          <a href="#box">Nos box</a>
+          <a href="#rituel">Rituel</a>
+          <a href="#avis">Avis</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <button class="btn btn-primary" onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'})">
+          Rejoindre la liste
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-label">Marque française • Rituels coréens & japonais</div>
+          <h1 class="hero-title">Une peau apaisée, lumineuse,<br>sans routine compliquée.</h1>
+          <p class="hero-text">
+            GOMA SKIN sélectionne pour vous des soins coréens et japonais clean, testés et approuvés,
+            et les réunit dans des box prêtes à l’emploi. Un rituel doux, minimaliste, inspiré de l’Asie et pensé pour les peaux françaises.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary" onclick="document.getElementById('box').scrollIntoView({behavior: 'smooth'})">
+              Découvrir les box
+            </button>
+            <button class="btn btn-ghost" onclick="document.getElementById('concept').scrollIntoView({behavior: 'smooth'})">
+              Comprendre le concept
+            </button>
+            <div class="hero-note">✨ Pré-lancement en cours — places limitées sur la liste d’attente.</div>
+          </div>
+        </div>
+        <aside>
+          <div class="hero-card">
+            <div class="hero-card-tag">Pré-lancement GOMA SKIN</div>
+            <h2 class="hero-card-title">La Box “Rituel Goma”</h2>
+            <p class="hero-text" style="margin-bottom:0.5rem;">
+              Une routine complète en 5 étapes : double nettoyage, hydratation profonde et glow final.
+            </p>
+            <ul class="hero-list">
+              <li>Produits coréens & japonais sélectionnés avec soin</li>
+              <li>Ingrédients doux & formulés pour peaux sensibles</li>
+              <li>Guide papier pas-à-pas inclus dans chaque box</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept -->
+  <section id="concept">
+    <div class="container">
+      <h2 class="section-title">Le concept GOMA SKIN</h2>
+      <p class="section-subtitle">
+        GOMA signifie “sésame” en japonais : un clin d’œil à un ingrédient simple, naturel,
+        au cœur de nombreux rituels asiatiques. Nous créons des routines complètes, prêtes à l’emploi,
+        pour prendre soin de votre peau sans vous perdre parmi des centaines de produits.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-title">Sélection pointue</div>
+          <div class="step-text">
+            Nous sourçons nos soins auprès de marques coréennes & japonaises reconnues,
+            déjà conformes aux normes européennes et à nos exigences clean.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-title">Routines minimalistes</div>
+          <div class="step-text">
+            Chaque box contient une routine cohérente de quelques produits complémentaires,
+            pour éviter les erreurs de layering et les irritations.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-title">Accompagnement réel</div>
+          <div class="step-text">
+            Un livret vous explique quand, comment et dans quel ordre utiliser vos soins, avec des conseils adaptés aux peaux françaises.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Box / offres -->
+  <section id="box">
+    <div class="container">
+      <h2 class="section-title">Nos premières box</h2>
+      <p class="section-subtitle">
+        Pour le lancement de GOMA SKIN, trois univers : hydratation profonde, peau sensible et éclat.
+        Les visuels produits sont indicatifs, les marques peuvent évoluer en fonction de nos meilleures trouvailles.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <div>
+            <div class="card-badge">Box n°1</div>
+            <div class="card-title">Rituel Hydratation Mizu</div>
+            <p class="card-text">
+              Double nettoyage doux, essence hydratante, sérum au thé vert et crème souple inspirée des routines japonaises.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">39,90 € <span>/ box de lancement</span></div>
+            <button class="btn btn-ghost">Je veux être prévenue</button>
+          </div>
+        </article>
+        <article class="card">
+          <div>
+            <div class="card-badge">Box n°2</div>
+            <div class="card-title">Peau Sensible Hana</div>
+            <p class="card-text">
+              Formules courtes, centella, céramides et textures cocon pour apaiser rougeurs et tiraillements sans alourdir.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">42,90 € <span>/ édition limitée</span></div>
+            <button class="btn btn-ghost">Rejoindre la liste</button>
+          </div>
+        </article>
+        <article class="card">
+          <div>
+            <div class="card-badge">Box n°3</div>
+            <div class="card-title">Glow Seoul</div>
+            <p class="card-text">
+              Routine inspirée du “glass skin” coréen : sérum luminosité, masque tissu et crème éclat sans fini gras.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">44,90 € <span>/ quantité limitée</span></div>
+            <button class="btn btn-ghost">Être informé(e)</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rituel -->
+  <section id="rituel">
+    <div class="container">
+      <h2 class="section-title">Le rituel GOMA en 5 étapes</h2>
+      <p class="section-subtitle">
+        Inspiré des routines asiatiques, mais simplifié pour le quotidien. Pas de 12 produits : seulement ce dont votre peau a vraiment besoin.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-title">Démaquillage & huile</div>
+          <div class="step-text">
+            On dissout maquillage, SPF et pollution sans décaper la barrière cutanée.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-title">Nettoyant doux</div>
+          <div class="step-text">
+            Un gel ou une mousse au pH adapté pour terminer le nettoyage tout en douceur.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-title">Essence ou tonique</div>
+          <div class="step-text">
+            On prépare la peau, on l’imbibe d’eau et on améliore la pénétration des soins suivants.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-title">Sérum ciblé</div>
+          <div class="step-text">
+            Hydratation, apaisement ou éclat selon la box choisie.
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-title">Crème & protection</div>
+          <div class="step-text">
+            On scelle l’hydratation, et en journée on ajoute un SPF (recommandation incluse dans chaque livret).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis -->
+  <section id="avis">
+    <div class="container">
+      <h2 class="section-title">Les premières retours</h2>
+      <p class="section-subtitle">
+        Nous testons chaque box auprès d’un petit panel avant la sortie. Voici ce qu’elles en disent.
+      </p>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          “J’ai enfin compris comment faire une routine simple sans agresser ma peau. Le livret est super clair.”
+          <div class="testimonial-name">Camille, 27 ans</div>
+          <div class="testimonial-tag">Peau sensible & rosacée</div>
+        </div>
+        <div class="testimonial">
+          “La sélection est très qualitative, on sent que ce n’est pas du remplissage. Mention spéciale pour le sérum.”
+          <div class="testimonial-name">Sarah, 31 ans</div>
+          <div class="testimonial-tag">Peau mixte</div>
+        </div>
+        <div class="testimonial">
+          “J’adore l’univers de la marque, c’est doux et rassurant. J’ai déjà hâte de la prochaine box.”
+          <div class="testimonial-name">Inès, 24 ans</div>
+          <div class="testimonial-tag">Passion K-Beauty</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ + contact/newsletter -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Questions fréquentes</h2>
+      <p class="section-subtitle">
+        GOMA SKIN est en pré-lancement. Inscrivez-vous pour être informé(e) des premières ventes et des offres fondatrices.
+      </p>
+      <div class="faq-grid">
+        <div>
+          <div class="faq-item">
+            <div class="faq-q">Les produits sont-ils adaptés aux peaux sensibles ?</div>
+            <div class="faq-a">
+              Oui. Nous évitons les parfums agressifs, les actifs trop irritants utilisés seuls
+              et privilégions les textures apaisantes. Chaque box précise le type de peau ciblé.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Les box sont-elles sous forme d’abonnement ?</div>
+            <div class="faq-a">
+              Pour le lancement, les box seront disponibles à l’unité, sans engagement.
+              Nous ouvrirons ensuite un abonnement très limité pour celles qui le souhaitent.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">D’où viennent les produits ?</div>
+            <div class="faq-a">
+              Nous travaillons avec des fournisseurs européens de confiance qui importent des marques coréennes et japonaises
+              déjà conformes à la réglementation cosmétique de l’UE.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Livrez-vous dans toute la France ?</div>
+            <div class="faq-a">
+              Oui, partout en France métropolitaine dans un premier temps. L’Europe viendra dans un second temps.
+            </div>
+          </div>
+        </div>
+        <aside>
+          <div class="contact-card" id="newsletter">
+            <h3>Rejoindre le cercle GOMA</h3>
+            <p>
+              Laissez votre e-mail pour recevoir en avant-première la date d’ouverture,
+              les photos des box et une offre réservée aux premières inscrites.
+            </p>
+            <form onsubmit="event.preventDefault(); alert('Merci ! Votre inscription est bien prise en compte (simulation).');">
+              <div class="input-group">
+                <input type="email" required placeholder="Votre e-mail" />
+                <button class="btn btn-primary" type="submit">Je m’inscris</button>
+              </div>
+              <div class="help-text">
+                Aucun spam, seulement des nouvelles de GOMA SKIN quelques fois par mois.
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> GOMA SKIN — Marque française inspirée de l’Asie.</div>
+      <div class="footer-links">
+        <a href="#top">Haut de page</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+  });
+
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
