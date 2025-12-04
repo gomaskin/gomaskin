@@ -869,7 +869,7 @@
     <div class="footer-inner">
       <div>© <span id="year"></span> GOMA SKIN — Marque française inspirée de l’Asie.</div>
       <div class="footer-links">
-        <a href="#top">Haut de page</a>
+        <a href="#">Haut de page</a>
         <a href="#">Mentions légales</a>
         <a href="#">Politique de confidentialité</a>
       </div>
@@ -889,12 +889,14 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
-<!-- 🔥 FORCER LA PAGE À S'AFFICHER EN HAUT -->
 <script>
-  window.addEventListener("pageshow", function () {
-    window.scrollTo(0, 0);
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      window.scrollTo(0, 0);
+    }, 50);
   });
 </script>
+
 
 </body>
 </html>
