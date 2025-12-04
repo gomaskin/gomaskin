@@ -878,16 +878,24 @@
 </footer>
 
 <script>
-  // mobile nav
-  const navToggle = document.getElementById('navToggle');
-  const navMenu = document.getElementById('navMenu');
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-  });
+    // mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+    });
 
-  // year
-  document.getElementById('year').textContent = new Date().getFullYear();
-  window.history.scrollRestoration = "manual";
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<!-- 🔥 FORCER LA PAGE À S'AFFICHER EN HAUT -->
+<script>
+  window.addEventListener("pageshow", function () {
+    window.scrollTo(0, 0);
+  });
+</script>
+
 </body>
 </html>
+
